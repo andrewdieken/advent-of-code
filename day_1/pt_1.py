@@ -1,4 +1,4 @@
-FILE_NAME = ''
+FILE_NAME = 'input.txt'
 with open(FILE_NAME) as file:
     raw_depths = file.readlines()
 
