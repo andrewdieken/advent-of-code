@@ -27,13 +27,10 @@ for raw_line_coordinates in raw_line_coordinate_input:
         }
     )
 
-def is_horizontal_or_vertical_line(coordinates):
-    """
-    """
-    return coordinates['start']['x'] == coordinates['end']['x'] or coordinates['start']['y'] == coordinates['end']['y']
-
 def generate_coordinate_range(start_coord, end_coord, length):
     """
+    Given a starting & ending x or y coordinate, generate a list of all the
+    coordinates on that line.
     """
     if start_coord == end_coord:
         return [start_coord] * length
