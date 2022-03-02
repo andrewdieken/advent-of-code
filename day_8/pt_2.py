@@ -22,24 +22,6 @@ def generate_known_segment_connection_mappings(wire_segment_connections):
 
     return known_mappings
 
-def generate_segment_postioning(known_segment_connection_mappings):
-    """
-    Generate postioning of segments based off the known segment connection
-    mappings.
-    """
-    segment_positioning = {
-        "T": "",
-        "TL": "",
-        "TR": "",
-        "M": "",
-        "B": "",
-        "BL": "",
-        "BR": ""
-    }
-
-    # T -> difference between 1 & 7
-    segment_positioning["T"] = set(known_segment_connection_mappings[7]) - set(known_segment_connection_mappings[1])
-
 def generate_wire_segment_connection_mappings(wire_segment_connections):
     """
     """
@@ -60,16 +42,25 @@ def generate_wire_segment_connection_mappings(wire_segment_connections):
     known_segment_connection_mappings = generate_known_segment_connection_mappings(wire_segment_connections)
     mappings.update(known_segment_connection_mappings)
 
-    # Determine segment positioning
+    #
+    # Get 6 segment length digits
+    #
 
-    # Get unknown mappings based off segment positioning
+    # 0
 
-    # Get known segment combos (1, 4, 7, 8)
-    for segment_combo in wire_segment_connections.split(' '):
-        import ipdb; ipdb.set_trace()
-        combo_len = len(segment_combo)
-        if segment_count_to_digit_mappings.get(combo_len) and not mappings[segment_count_to_digit_mappings.get(combo_len)]:
-            mappings[segment_count_to_digit_mappings.get(combo_len)] = segment_combo
+    # 9
+
+    # 6
+
+    #
+    # Get 5 segment length digits
+    #
+
+    # 3
+
+    # 5
+
+    # 2
 
     return mappings
 
